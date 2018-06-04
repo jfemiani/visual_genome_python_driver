@@ -187,7 +187,7 @@ def parse_graph_local(data, image, verbose=False):
             else:
                 count_skips[1] += 1
     if verbose:
-        print('Skipped {} rels, {} attrs total'.format(*count_skips))
+        print(('Skipped {} rels, {} attrs total'.format(*count_skips)))
     return Graph(image, objects, relationships, attributes)
 
 
@@ -269,7 +269,7 @@ def add_attrs_to_scene_graphs(data_dir='data/'):
         sg_dict[iid]['attributes'] = attrs
 
     with open(os.path.join(data_dir, 'scene_graphs.json'), 'w') as f:
-        json.dump(sg_dict.values(), f)
+        json.dump(list(sg_dict.values()), f)
     del attr_data, sg_dict
     gc.collect()
 
