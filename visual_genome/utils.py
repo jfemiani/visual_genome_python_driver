@@ -120,6 +120,6 @@ def parse_QA(data, image_map):
                 synset = Synset(ao['synset_name'], ao['synset_definition'])
                 aos.append(QAObject(ao['entity_idx_start'], ao[
                            'entity_idx_end'], ao['entity_name'], synset))
-        qas.append(QA(info['qa_id'], image_map[info['image_id']],
+        qas.append(QA(info['id'], image_map[info['image']],
                       info['question'], info['answer'], qos, aos))
     return qas
